@@ -1,0 +1,20 @@
+{
+  "metro": {
+    "serviceDate": "20261113",
+    "activeServices": 1,
+    "tripsUsed": 1120,
+    "tripsWithSequence": 1120,
+    "patterns": 21,
+    "stops": 88,
+    "droppedMissingStop": 0
+  },
+  "bus": {
+    "serviceDate": "20261113",
+    "activeServices": 34,
+    "tripsUsed": 64822,
+    "tripsWithSequence": 64822,
+    "patterns": 8655,
+    "stops": 9950,
+    "droppedMissingStop": 0
+  }
+}
