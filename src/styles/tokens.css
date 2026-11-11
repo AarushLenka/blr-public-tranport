@@ -1,0 +1,186 @@
+/*
+  Design tokens. Source of truth: docs/DESIGN.md (light theme).
+  The dark palette is derived from the same teal, navy and ink family; see DECISIONS.md.
+  Metro line colours and mode colours are data and never come from this file.
+*/
+
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('/fonts/SourceSerif4-Variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('/fonts/SourceSerif4-Italic-Variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url('/fonts/DMSans-Variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/IBMPlexMono-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/IBMPlexMono-600.woff2') format('woff2');
+}
+
+:root {
+  color-scheme: light;
+
+  /* DESIGN.md palette */
+  --color-warm-paper: #f2f8f7;
+  --color-card-mint: #e4f0f1;
+  --color-blush-sand: #f2e8e2;
+  --color-sea-foam: #cae1e2;
+  --color-mint-mist: #a2cbcd;
+  --color-deep-teal: #1c5d5f;
+  --color-teal-hover: #156152;
+  --color-pine-shadow: #0e4749;
+  --color-sage: #65b8a2;
+  --color-lake-teal: #2a7779;
+  --color-ink-navy: #16325a;
+  --color-dusty-rose: #d6aec1;
+  --color-charcoal-navy: #283338;
+  --color-illustration-ink: #231e21;
+
+  /* Roles. Components use these, so a theme only has to change this block. */
+  --bg: var(--color-warm-paper);
+  --surface: var(--color-card-mint);
+  --surface-warm: var(--color-blush-sand);
+  --surface-strong: var(--color-sea-foam);
+  --hairline: var(--color-mint-mist);
+  --text: var(--color-charcoal-navy);
+  --text-muted: #47595f;
+  --label: var(--color-pine-shadow);
+  --primary: var(--color-deep-teal);
+  --primary-hover: var(--color-teal-hover);
+  --on-primary: #ffffff;
+  --secondary: var(--color-ink-navy);
+  --secondary-hover: #0f2646;
+  --on-secondary: #ffffff;
+  --outline: var(--color-pine-shadow);
+  --link: var(--color-pine-shadow);
+  --accent: var(--color-sage);
+  --accent-warm: var(--color-dusty-rose);
+  --danger: #8c2f1f;
+  --ill-ink: var(--color-illustration-ink);
+  --ill-paper: #fbfdfc;
+  --ill-sage: var(--color-sage);
+  --ill-rose: var(--color-dusty-rose);
+  --ill-foam: var(--color-sea-foam);
+  --ill-navy: var(--color-ink-navy);
+  --scrim: rgba(14, 71, 73, 0.42);
+
+  /* Type */
+  --font-serif: 'Source Serif 4', 'Lora', 'Crimson Pro', Georgia, 'Times New Roman', serif;
+  --font-sans: 'DM Sans', 'Manrope', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-md: 18px;
+  --text-lg: 24px;
+  --text-xl: 32px;
+  --text-2xl: 44px;
+  --text-3xl: 64px;
+
+  /* Spacing, base 8 */
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-8: 64px;
+  --spacing-11: 88px;
+  --spacing-14: 112px;
+
+  --page-max: 1200px;
+  --page-x: 24px;
+
+  /* Radii */
+  --radius-card: 12px;
+  --radius-button: 48px;
+  --radius-nav: 88px;
+  --radius-tag: 100px;
+  --radius-pill: 1000px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-micro: 150ms;
+  --dur-standard: 280ms;
+  --dur-emphasis: 480ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #0a2022;
+    --surface: #102e30;
+    --surface-warm: #1d3636;
+    --surface-strong: #1b4446;
+    --hairline: #2c5b5d;
+    --text: #e8f2f1;
+    --text-muted: #a9c6c7;
+    --label: #a2cbcd;
+    --primary: #65b8a2;
+    --primary-hover: #7cc7b2;
+    --on-primary: #0a2022;
+    --secondary: #cae1e2;
+    --secondary-hover: #e4f0f1;
+    --on-secondary: #16325a;
+    --outline: #a2cbcd;
+    --link: #a2cbcd;
+    --danger: #f0a493;
+    --ill-ink: #e8f2f1;
+    --ill-paper: #102e30;
+    --ill-navy: #2a7779;
+    --scrim: rgba(3, 14, 15, 0.66);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a2022;
+  --surface: #102e30;
+  --surface-warm: #1d3636;
+  --surface-strong: #1b4446;
+  --hairline: #2c5b5d;
+  --text: #e8f2f1;
+  --text-muted: #a9c6c7;
+  --label: #a2cbcd;
+  --primary: #65b8a2;
+  --primary-hover: #7cc7b2;
+  --on-primary: #0a2022;
+  --secondary: #cae1e2;
+  --secondary-hover: #e4f0f1;
+  --on-secondary: #16325a;
+  --outline: #a2cbcd;
+  --link: #a2cbcd;
+  --danger: #f0a493;
+  --ill-ink: #e8f2f1;
+  --ill-paper: #102e30;
+  --ill-navy: #2a7779;
+  --scrim: rgba(3, 14, 15, 0.66);
+}
